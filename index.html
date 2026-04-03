@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Nupur 🎂</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      background:
+        radial-gradient(circle at 50% 18%, rgba(255,255,255,0.08), transparent 22%),
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.04), transparent 25%),
+        radial-gradient(circle at 80% 75%, rgba(255,255,255,0.05), transparent 28%),
+        linear-gradient(180deg, #6d20d9 0%, #4b148d 50%, #32105d 100%);
+      position: relative;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.12;
+      background-image: url("https://www.transparenttextures.com/patterns/noise.png");
+    }
+
+    .sparkles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.9);
+      box-shadow: 0 0 12px rgba(255,255,255,0.7);
+      animation: floatSparkle linear infinite;
+    }
+
+    @keyframes floatSparkle {
+      0% {
+        transform: translateY(0) scale(0.8);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1000px;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cake-scene {
+      position: relative;
+      width: 360px;
+      height: 300px;
+      margin: 0 auto 10px;
+      filter: drop-shadow(0 0 20px rgba(255, 210, 120, 0.18));
+    }
+
+    .plate {
+      position: absolute;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 250px;
+      height: 24px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.85), rgba(255,255,255,0.25) 65%, rgba(255,255,255,0.08));
+      opacity: 0;
+      animation: fadePlate 0.6s ease forwards;
+      animation-delay: 0.1s;
+    }
+
+    @keyframes fadePlate {
+      to { opacity: 1; }
+    }
+
+    .tier {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) translateY(-260px);
+      border-radius: 18px;
+      opacity: 0;
+      overflow: hidden;
+      box-shadow:
+        inset 0 8px 10px rgba(255,255,255,0.45),
+        0 10px 22px rgba(0,0,0,0.14);
+      border: 1px solid rgba(255,255,255,0.18);
+      background:
+        repeating-linear-gradient(
+          90deg,
+          rgba(255,255,255,0.07) 0 8px,
+          rgba(255,255,255,0.01) 8px 16px
+        ),
+        linear-gradient(180deg, #fff0f6 0%, #ffdbe8 38%, #ffc2d7 100%);
+      animation: dropLayer 0.9s ease forwards;
+    }
+
+    .tier1 {
+      width: 210px;
+      height: 72px;
+      bottom: 38px;
+      animation-delay: 0.4s;
+    }
+
+    .tier2 {
+      width: 160px;
+      height: 62px;
+      bottom: 93px;
+      animation-delay: 1.25s;
+    }
+
+    .tier3 {
+      width: 110px;
+      height: 52px;
+      bottom: 143px;
+      animation-delay: 2.05s;
+    }
+
+    @keyframes dropLayer {
+      0% {
+        transform: translateX(-50%) translateY(-260px);
+        opacity: 0;
+      }
+      70% {
+        transform: translateX(-50%) translateY(12px);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .icing {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fffdfd;
+      opacity: 0;
+      border-radius: 18px 18px 22px 22px;
+      box-shadow: inset 0 3px 4px rgba(255,255,255,0.9);
+      animation: showIcing 0.55s ease forwards;
+    }
+
+    .icing1 {
+      width: 210px;
+      height: 16px;
+      bottom: 94px;
+      animation-delay: 1.05s;
+    }
+
+    .icing2 {
+      width: 160px;
+      height: 14px;
+      bottom: 141px;
+      animation-delay: 1.9s;
+    }
+
+    .icing3 {
+      width: 110px;
+      height: 13px;
+      bottom: 182px;
+      animation-delay: 2.7s;
+    }
+
+    .icing::before,
+    .icing::after {
+      content: "";
+      position: absolute;
+      width: 13px;
+      height: 18px;
+      background: #fffdfd;
+      bottom: -8px;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .icing1::before { left: 24px; }
+    .icing1::after { right: 30px; }
+    .icing2::before { left: 20px; }
+    .icing2::after { right: 22px; }
+    .icing3::before { left: 16px; }
+    .icing3::after { right: 17px; }
+
+    @keyframes showIcing {
+      from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+    }
+
+    .sprinkle {
+      position: absolute;
+      width: 9px;
+      height: 4px;
+      border-radius: 10px;
+      opacity: 0;
+      animation: showSprinkle 0.45s ease forwards;
+    }
+
+    .s1 { left: 116px; bottom: 84px; background: #ff5f91; transform: rotate(25deg); animation-delay: 2.95s; }
+    .s2 { left: 155px; bottom: 86px; background: #65d6ff; transform: rotate(-24deg); animation-delay: 3.05s; }
+    .s3 { left: 192px; bottom: 90px; background: #ffd64d; transform: rotate(20deg); animation-delay: 3.15s; }
+    .s4 { left: 146px; bottom: 129px; background: #73ef9f; transform: rotate(30deg); animation-delay: 3.2s; }
+    .s5 { left: 177px; bottom: 132px; background: #ff6e6e; transform: rotate(-20deg); animation-delay: 3.3s; }
+
+    @keyframes showSprinkle {
+      from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.8);
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .candles {
+      position: absolute;
+      left: 50%;
+      bottom: 194px;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+    }
+
+    .candle {
+      width: 10px;
+      height: 38px;
+      border-radius: 8px;
+      background:
+        repeating-linear-gradient(
+          45deg,
+          #ffffff 0 5px,
+          #ff77af 5px 10px
+        );
+      opacity: 0;
+      transform: translateY(20px);
+      box-shadow: 0 0 8px rgba(255,255,255,0.25);
+      animation: candleShow 0.45s ease forwards;
+    }
+
+    .candle:nth-child(1) { animation-delay: 3.45s; }
+    .candle:nth-child(2) { animation-delay: 3.7s; }
+    .candle:nth-child(3) { animation-delay: 3.95s; }
+
+    @keyframes candleShow {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .flame {
+      position: absolute;
+      top: -17px;
+      left: -2px;
+      width: 14px;
+      height: 22px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 65%, #fff17a 0%, #ffbb22 45%, #ff8800 80%);
+      box-shadow:
+        0 0 14px rgba(255, 177, 0, 0.9),
+        0 0 28px rgba(255, 187, 34, 0.4);
+      opacity: 0;
+      animation:
+        flameAppear 0.35s ease forwards,
+        flicker 0.45s ease-in-out infinite alternate;
+      animation-delay: 4.15s, 4.45s;
+    }
+
+    @keyframes flameAppear {
+      to { opacity: 1; }
+    }
+
+    @keyframes flicker {
+      from { transform: scale(1) rotate(-2deg); }
+      to { transform: scale(1.12) rotate(2deg); }
+    }
+
+    .title {
+      margin: 8px 0 12px;
+      font-family: 'Great Vibes', cursive;
+      font-size: 88px;
+      line-height: 0.95;
+      color: #fff;
+      text-shadow:
+        0 0 8px rgba(255,255,255,0.95),
+        0 0 18px rgba(255,255,255,0.75),
+        0 0 36px rgba(255,255,255,0.35);
+      opacity: 0;
+      transform: translateY(22px);
+      animation: revealText 1s ease forwards;
+      animation-delay: 4.8s;
+    }
+
+    .card {
+      width: min(92%, 680px);
+      margin: 0 auto;
+      padding: 28px 24px 24px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+      opacity: 0;
+      transform: translateY(22px);
+      animation: revealText 1s ease forwards;
+      animation-delay: 5.15s;
+    }
+
+    .message {
+      margin: 0 0 20px;
+      font-size: 18px;
+      line-height: 1.7;
+      font-weight: 600;
+      color: #fff7d7;
+    }
+
+    .wish-btn {
+      border: none;
+      border-radius: 999px;
+      padding: 16px 42px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      cursor: pointer;
+      background: linear-gradient(90deg, #12da8d 0%, #0ff0b3 100%);
+      box-shadow:
+        0 0 18px rgba(17,255,175,0.45),
+        0 10px 18px rgba(0,0,0,0.16);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .wish-btn:hover {
+      transform: translateY(-2px) scale(1.03);
+    }
+
+    @keyframes revealText {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .confetti {
+      position: fixed;
+      top: -20px;
+      width: 10px;
+      height: 16px;
+      border-radius: 4px;
+      z-index: 10;
+      animation: confettiFall linear forwards;
+    }
+
+    @keyframes confettiFall {
+      to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .cake-scene {
+        transform: scale(0.82);
+        margin-bottom: 0;
+      }
+
+      .title {
+        font-size: 58px;
+        line-height: 1.02;
+      }
+
+      .message {
+        font-size: 16px;
+      }
+
+      .card {
+        padding: 22px 16px 20px;
+      }
+
+      .wish-btn {
+        width: 100%;
+        max-width: 260px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sparkles" id="sparkles"></div>
+
+  <div class="container">
+    <div class="cake-scene">
+      <div class="plate"></div>
+
+      <div class="tier tier1"></div>
+      <div class="icing icing1"></div>
+
+      <div class="tier tier2"></div>
+      <div class="icing icing2"></div>
+
+      <div class="tier tier3"></div>
+      <div class="icing icing3"></div>
+
+      <div class="sprinkle s1"></div>
+      <div class="sprinkle s2"></div>
+      <div class="sprinkle s3"></div>
+      <div class="sprinkle s4"></div>
+      <div class="sprinkle s5"></div>
+
+      <div class="candles">
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+      </div>
+    </div>
+
+    <div class="title">Happy Birthday<br>Nupur</div>
+
+    <div class="card">
+      <p class="message">
+        Wishing you a day filled with happiness, smiles, laughter, and beautiful memories.
+        Happy Birthday, Nupur!Rajveer 💖
+      </p>
+      <button class="wish-btn" onclick="celebrate()">Wish Made! ✨</button>
+    </div>
+  </div>
+
+  <script>
+    const sparkles = document.getElementById("sparkles");
+
+    for (let i = 0; i < 24; i++) {
+      const dot = document.createElement("div");
+      dot.className = "sparkle";
+      dot.style.left = Math.random() * 100 + "vw";
+      dot.style.bottom = "-" + (Math.random() * 120) + "px";
+      dot.style.animationDuration = (5 + Math.random() * 4) + "s";
+      dot.style.animationDelay = (Math.random() * 4) + "s";
+      sparkles.appendChild(dot);
+    }
+
+    function celebrate() {
+      const colors = ["#ff4d8d", "#ffd84d", "#ffffff", "#62d9ff", "#85ffb1", "#c58cff"];
+
+      for (let i = 0; i < 90; i++) {
+        const confetti = document.createElement("div");
+        confetti.className = "confetti";
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.animationDuration = (2.5 + Math.random() * 2) + "s";
+        confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+        document.body.appendChild(confetti);
+
+        setTimeout(() => confetti.remove(), 4500);
+      }
+    }
+  </script>
+</body>
+</html>
